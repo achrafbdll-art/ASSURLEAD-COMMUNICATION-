@@ -1,0 +1,438 @@
+<index.html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASSURLEAD - L'agence digitale spécialisée pour les agents d'assurance. Générez plus de leads qualifiés avec nos systèmes d'acquisition automatisés.">
+    <title>ASSURLEAD - On ne communique pas. On convertit.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Live Lead Ticker -->
+    <div id="lead-ticker" class="lead-ticker">
+        <div class="ticker-icon"><i class="fas fa-bolt"></i></div>
+        <div class="ticker-content">
+            <div class="ticker-text" id="ticker-name">Ahmed B. vient de s'inscrire</div>
+            <div class="ticker-subtext" id="ticker-meta">Casablanca • à l'instant</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-chart-line"></i></div>
+                <span class="logo-text">ASSUR<span class="neon">LEAD</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#projets" id="nav-projets">Réalisations</a></li>
+                <li><a href="#offres">Offres</a></li>
+                <li><a href="#roi">Simulateur</a></li>
+                <li><a href="#methode">Méthode</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary btn-sm">Démarrer</a></li>
+            </ul>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Agent Digital 2026</span>
+                <h1>On ne communique pas. <br><span class="neon">On convertit.</span></h1>
+                <p>Votre visibilité mérite des résultats. Nous construisons des systèmes d'acquisition automatisés pour les agents d'assurance et courtiers ambitieux.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Lancer ma croissance <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline">Audit Stratégique</a>
+                </div>
+                <div class="partners">
+                    <span class="partners-label">Partenaires Stratégiques</span>
+                    <div class="marquee">
+                        <div class="marquee-content">
+                            <span>AXA ASSURANCE</span>
+                            <span>ALLIANZ</span>
+                            <span>WAFA ASSURANCE</span>
+                            <span>RMA</span>
+                            <span>SAHAM</span>
+                            <span>ATLANTA</span>
+                            <!-- Loop -->
+                            <span>AXA ASSURANCE</span>
+                            <span>ALLIANZ</span>
+                            <span>WAFA ASSURANCE</span>
+                            <span>RMA</span>
+                            <span>SAHAM</span>
+                            <span>ATLANTA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-card">
+                    <div class="dashboard-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="pulse"></span>
+                            <span>Dashboard Live</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-label">Leads ce mois</span>
+                                <span class="stat-val neon">+42</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Taux de Conv.</span>
+                                <span class="stat-val">18.4%</span>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="bar" style="height: 40%;"></div>
+                            <div class="bar" style="height: 70%;"></div>
+                            <div class="bar" style="height: 45%;"></div>
+                            <div class="bar" style="height: 90%;"></div>
+                            <div class="bar" style="height: 65%;"></div>
+                            <div class="bar" style="height: 80%;"></div>
+                            <div class="bar" style="height: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section id="roi" class="roi-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Simulateur 2026</span>
+                <h2>Projetez votre <span class="neon">Réussite.</span></h2>
+                <p>Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.</p>
+            </div>
+            <div class="roi-grid">
+                <div class="roi-controls">
+                    <div class="control-group">
+                        <label>Budget Publicitaire Mensuel <span id="budget-val" class="neon">2,500 MAD</span></label>
+                        <input type="range" id="budget-input" min="1000" max="50000" step="500" value="2500">
+                    </div>
+                    <div class="control-group">
+                        <label>Taux de Conversion Estimé <span id="conv-val" class="neon">15%</span></label>
+                        <input type="range" id="conv-input" min="1" max="50" step="1" value="15">
+                    </div>
+                    
+                    <div class="roi-metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-label">Leads Mensuels</span>
+                            <span id="leads-count" class="metric-value">166</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Coût par Lead</span>
+                            <span class="metric-value">15 MAD</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Ventes Estimées</span>
+                            <span id="sales-count" class="metric-value">25</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Panier Moyen</span>
+                            <span class="metric-value">1,200 MAD</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-total-card">
+                        <div class="total-main">
+                            <span class="total-label">Revenu Net Estimé</span>
+                            <span id="revenue-display" class="total-value neon">24,000 MAD</span>
+                        </div>
+                        <div class="total-side">
+                            <span class="total-label">ROI</span>
+                            <span id="roi-display" class="total-roi">+860%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="roi-visual-container">
+                    <div id="roi-canvas-container" class="roi-canvas"></div>
+                    <div class="visual-overlay">
+                        <div class="overlay-tag">Simulation Temps Réel</div>
+                        <div class="overlay-data">
+                            <div class="data-item">
+                                <div class="data-dot"></div>
+                                <span>Flux de Trésorerie Positif</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers -->
+    <section id="offres" class="offers">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Solutions d'Acquisition</span>
+                <h2>L'investissement <span class="neon">Rentable.</span></h2>
+                <p>Des packs conçus pour chaque étape de votre développement. Transparence totale, performance garantie.</p>
+            </div>
+            <div class="offers-grid">
+                <div class="price-card">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Mini Express</h3>
+                    <div class="price">1200<span>MAD</span></div>
+                    <ul class="features">
+                        <li>Landing Page conversion</li>
+                        <li>Livraison 5 jours</li>
+                        <li>Capture de leads</li>
+                        <li>Design Responsive</li>
+                        <li>Setup Analytics</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Démarrer</a>
+                </div>
+                <div class="price-card">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Starter</h3>
+                    <div class="price">1800<span>MAD</span></div>
+                    <ul class="features">
+                        <li>Hébergement Pro</li>
+                        <li>Maintenance technique</li>
+                        <li>Mise à jour mensuelle</li>
+                        <li>SEO Local Basique</li>
+                        <li>Support Prioritaire</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Choisir</a>
+                </div>
+                <div class="price-card highlighted">
+                    <div class="popular-badge">Performance</div>
+                    <div class="card-icon"><i class="fas fa-trending-up"></i></div>
+                    <h3>Growth</h3>
+                    <div class="price">2400<span>MAD</span></div>
+                    <ul class="features">
+                        <li>SEO Local Avancé</li>
+                        <li>Campagne Meta Ads</li>
+                        <li>Reporting Hebdo</li>
+                        <li>Dashboard Live</li>
+                        <li>Optimisation CRO</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary full-width">Accélérer</a>
+                </div>
+                <div class="price-card">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Scale</h3>
+                    <div class="price">3000<span>MAD</span></div>
+                    <ul class="features">
+                        <li>SEO Multi-villes</li>
+                        <li>Ads Multi-canaux</li>
+                        <li>Automation CRM</li>
+                        <li>Email Marketing</li>
+                        <li>Audit Trimestriel</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Dominer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Méthode Section -->
+    <section id="methode" class="methode">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Notre Approche</span>
+                <h2>Le Cycle de <span class="neon">Conversion.</span></h2>
+                <p>Une méthodologie rigoureuse en 4 étapes pour transformer votre visibilité en chiffre d'affaires.</p>
+            </div>
+            <div class="methode-grid">
+                <div class="methode-step">
+                    <div class="step-num">01</div>
+                    <h3>Audit & Stratégie</h3>
+                    <p>Analyse de votre marché local et définition des objectifs de leads mensuels.</p>
+                </div>
+                <div class="methode-step">
+                    <div class="step-num">02</div>
+                    <h3>Système d'Acquisition</h3>
+                    <p>Déploiement de landing pages haute-performance et setup des campagnes Ads.</p>
+                </div>
+                <div class="methode-step">
+                    <div class="step-num">03</div>
+                    <h3>Automation CRM</h3>
+                    <p>Qualification automatique des leads et notification instantanée sur votre mobile.</p>
+                </div>
+                <div class="methode-step">
+                    <div class="step-num">04</div>
+                    <h3>Optimisation ROI</h3>
+                    <p>Analyse hebdomadaire des performances et ajustement pour maximiser la conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Dashboard Section (Hidden by default, shown when logged in or clicked) -->
+    <!-- Projects / Portfolio -->
+    <section id="projets" class="projects hidden">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Succès Clients</span>
+                <h2>Nos <span class="neon">Réalisations.</span></h2>
+                <p>Découvrez comment nos systèmes d'acquisition transforment l'activité des agents d'assurance.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/insurance/800/600" alt="Assurances El Omrani" referrerPolicy="no-referrer">
+                        <div class="project-overlay">
+                            <a href="https://www.assuranceselomrani.com" target="_blank" class="btn btn-primary btn-sm">Voir le site <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Assurances El Omrani</h3>
+                        <p>Système complet d'acquisition de leads pour l'assurance automobile et santé.</p>
+                        <div class="project-tags">
+                            <span>Landing Page</span>
+                            <span>Ads Meta</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <span class="badge">Contact</span>
+                <h2>Parlons <br><span class="neon">Résultats.</span></h2>
+                <p>Vous avez des questions ou vous souhaitez un audit personnalisé ? Notre équipe vous recontactera sous 24h.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="method-label">Email</span>
+                            <span class="method-val">contact@assurlead.ma</span>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <span class="method-label">Téléphone</span>
+                            <span class="method-val">0707573162</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form id="questionnaire" class="questionnaire">
+                    <div class="steps-progress">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                    </div>
+                    <div class="form-step" id="step-1">
+                        <label>IDENTITÉ</label>
+                        <input type="text" placeholder="VOTRE NOM COMPLET" required>
+                        <button type="button" class="btn btn-primary full-width next-btn">SUIVANT <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="form-step hidden" id="step-2">
+                        <label>CONTACT</label>
+                        <input type="email" placeholder="EMAIL PROFESSIONNEL" required>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline prev-btn">RETOUR</button>
+                            <button type="button" class="btn btn-primary next-btn">SUIVANT</button>
+                        </div>
+                    </div>
+                    <div class="form-step hidden" id="step-3">
+                        <label>AGENCE</label>
+                        <input type="text" placeholder="NOM DE VOTRE AGENCE" required>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline prev-btn">RETOUR</button>
+                            <button type="button" class="btn btn-primary next-btn">SUIVANT</button>
+                        </div>
+                    </div>
+                    <div class="form-step hidden" id="step-4">
+                        <label>OBJECTIF</label>
+                        <textarea rows="4" placeholder="VOTRE OBJECTIF DE CROISSANCE"></textarea>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline prev-btn">RETOUR</button>
+                            <button type="submit" class="btn btn-primary">ENVOYER <i class="fas fa-bolt"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-copy">© 2026 ASSURLEAD INFRASTRUCTURE. TOUS DROITS RÉSERVÉS.</p>
+        </div>
+    </footer>
+
+    <!-- CTA Modal -->
+    <div id="cta-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="modal-inner">
+                <div class="modal-icon"><i class="fas fa-bolt"></i></div>
+                <span class="badge">Offre Limitée</span>
+                <h2>Prêt à <span class="neon">Dominer</span> votre Marché ?</h2>
+                <p>Réservez votre audit stratégique gratuit aujourd'hui et recevez notre guide "Agent Digital 2026" instantanément.</p>
+                <a href="#contact" class="btn btn-primary full-width">Réserver mon Audit Gratuit</a>
+                <div class="modal-timer"><i class="fas fa-clock"></i> Plus que 3 créneaux cette semaine</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Yacine -->
+    <div id="chat-widget" class="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge">Yacine AI</span>
+        </button>
+        <div id="chat-window" class="chat-window hidden">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar">Y</div>
+                    <div>
+                        <h4>Yacine AI</h4>
+                        <span class="chat-status"><span class="pulse"></span> En ligne</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Bonjour ! Je suis Yacine, votre assistant IA. Comment puis-je vous aider à faire croître votre agence aujourd'hui ?
+                </div>
+            </div>
+            <div id="chat-suggestions" class="chat-suggestions hidden"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Posez votre question..." autocomplete="off">
+                <button id="chat-send" class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
